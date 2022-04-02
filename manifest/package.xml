@@ -6,6 +6,7 @@
     </types>
     <types>
         <members>boatSearchForm</members>
+        <members>boatTile</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
