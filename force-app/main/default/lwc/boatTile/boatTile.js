@@ -14,21 +14,37 @@ export default class BoatTile extends LightningElement {
         return `background-image:url('${this.boat.Picture__c}')`;
     }
 
+    // // Getter for dynamically setting the tile class based on whether the
+    // // current boat is selected
+    // get tileClass() {
+    //     if (this.boat.Id === this.selectedBoatId) {
+    //         return TILE_WRAPPER_SELECTED_CLASS;
+    //     }
+    //     return TILE_WRAPPER_UNSELECTED_CLASS;
+    // }
+
     // Getter for dynamically setting the tile class based on whether the
     // current boat is selected
     get tileClass() {
-        if (this.boat.Id === this.selectedBoatId) {
-            return TILE_WRAPPER_SELECTED_CLASS;
-        }
-        return TILE_WRAPPER_UNSELECTED_CLASS;
+        return this.selectedBoatId ? TILE_WRAPPER_SELECTED_CLASS : TILE_WRAPPER_UNSELECTED_CLASS;
     }
+
+    //// Fires event with the Id of the boat that has been selected.
+    // selectBoat() {
+    //     this.selectedBoatId = this.boat.Id;
+    //     const boatselectEvent = new CustomEvent('boatselect', {
+    //         detail: {
+    //             boatId: this.selectedBoatId
+    //         }
+    //     });
+    //     this.dispatchEvent(boatselectEvent);
+    // }
 
     // Fires event with the Id of the boat that has been selected.
     selectBoat() {
-        this.selectedBoatId = this.boat.Id;
         const boatselectEvent = new CustomEvent('boatselect', {
             detail: {
-                boatId: this.selectedBoatId
+                boatId: this.boat.Id
             }
         });
         this.dispatchEvent(boatselectEvent);
