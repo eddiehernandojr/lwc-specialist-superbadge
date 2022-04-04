@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 // import BOATMC from the message channel
 import BOATMC from '@salesforce/messageChannel/BoatMessageChannel__c';
@@ -18,6 +18,7 @@ export default class BoatMap extends LightningElement {
 
     // Getter and Setter to allow for logic to run on recordId change
     // this getter must be public
+    @api
     get recordId() {
         return this.boatId;
     }
