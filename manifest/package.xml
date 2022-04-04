@@ -5,6 +5,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>boatMap</members>
         <members>boatSearchForm</members>
         <members>boatTile</members>
         <name>LightningComponentBundle</name>
