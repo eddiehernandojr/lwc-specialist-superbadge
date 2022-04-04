@@ -1,5 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import getBoatsByLocation from '@salesforce/apex/BoatDataService.getBoatsByLocation';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 const LABEL_YOU_ARE_HERE = 'You are here!';
 const ICON_STANDARD_USER = 'standard:user';
@@ -37,9 +38,9 @@ export default class BoatsNearMe extends LightningElement {
     // Calls getLocationFromBrowser()
     renderedCallback() {
         if (!this.isRendered) {
-            getLocationFromBrowser();   
+            this.getLocationFromBrowser();   
         }
-        this.isRendered = false;
+        this.isRendered = true;
     }
 
     // Gets the location from the Browser
@@ -56,13 +57,13 @@ export default class BoatsNearMe extends LightningElement {
     // Creates the map markers
     createMapMarkers(boatData) {
         // const newMarkers = boatData.map(boat => {...});
-        const newMarkers = boatData.map(boat => { 
+        const newMarkers = JSON.parse(boatData).map(boat => { 
             return { 
                     location: {
                         Latitude: boat.Geolocation__Latitude__s,
                         Longitude: boat.Geolocation__Longitude__s
                     },
-                    title: boat.name
+                    title: boat.Name
                 };
         });
         // newMarkers.unshift({...});
