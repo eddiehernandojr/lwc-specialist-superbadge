@@ -6,8 +6,12 @@
     </types>
     <types>
         <members>boatMap</members>
+        <members>boatSearch</members>
         <members>boatSearchForm</members>
+        <members>boatSearchResults</members>
+        <members>boatsNearMe</members>
         <members>boatTile</members>
+        <members>fiveStarRating</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
