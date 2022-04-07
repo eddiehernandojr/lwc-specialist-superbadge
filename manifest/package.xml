@@ -5,6 +5,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>boatAddReviewForm</members>
         <members>boatMap</members>
         <members>boatSearch</members>
         <members>boatSearchForm</members>
