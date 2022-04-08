@@ -21,5 +21,13 @@
         <members>BoatMessageChannel</members>
         <name>LightningMessageChannel</name>
     </types>
+    <types>
+        <members>SimilarBoats</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>SimilarBoatsComponent</members>
+        <name>ApexComponent</name>
+    </types>
     <version>54.0</version>
 </Package>
